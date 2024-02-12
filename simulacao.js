@@ -154,7 +154,7 @@ function criarGrafico() {
             data: [],
             backgroundColor: corAleatoria.replace('1)', '0.2)'), // Define a cor de fundo com opacidade reduzida
             borderColor: corAleatoria,
-            borderWidth: 1,
+            borderWidth: 2,
             point: false
         });
     }
