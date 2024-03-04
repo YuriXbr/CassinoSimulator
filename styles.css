@@ -1,302 +1,95 @@
-/* Estilos para a barra de navegação */
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
-.icon {
-    align-self: center;
-    margin-right: 30px;
-}
-
-.app-name {
-    align-items: left;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-
-/* Ajustes para o conteúdo da página */
-.container {
-    padding: 20px;
-}
 body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #202020;
-    color: white;
+    overflow-x: hidden;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    padding: 20px;
+header {
+    text-align: center;
+    padding: 20px 0 10px; /* Ajustando o padding inferior */
+    position: relative; /* Para posicionar a seta */
 }
 
-.chart-container {
-    position: relative;
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px; /* Reduzindo a margem inferior */
 }
 
-.chart-container::before {
-    content: "Saldo do Jogador";
+.arrow-down {
     position: absolute;
-    top: 50%;
-    left: -75px; /* Ajuste a posição conforme necessário */
-    transform: translateY(-50%) rotate(-90deg);
-    color: white;
-}
-
-.chart-container::after {
-    content: "Número de Rodadas";
-    position: absolute;
-    bottom: -20px; /* Ajuste a posição conforme necessário */
+    bottom: 10px; /* Posicionando a seta na parte inferior */
     left: 50%;
     transform: translateX(-50%);
-    color: white;
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
-    margin-top: 30px;;
-}
-
-.button {
-    border: none;
-    color: white;
-    margin-right: 10px;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #fff;
     cursor: pointer;
-    border-radius: 10px;
 }
 
-.graphText {
-    padding-left: 5px;
-}
-
-.start-button{
-    background-color: #4CAF50;
-}
-.start-button:hover {
-background-color: #419444;
-}
-
-
-.pause-button {
-    background-color: #007bff; /* Azul */
-}
-.pause-button:hover:enabled {
-    background-color: #0056b3; /* Azul mais escuro no hover */
-}
-
-.pause-button.paused {
-    background-color: #ee4b5c; /* Vermelho */
-}
-.pause-button:disabled {
-    cursor: default;
-}
-.pause-button.paused:hover {
-    background-color: #c9404e; /* Vermelho mais escuro no hover */
-}
-
-.next-button {
-    background-color: orange;
-}
-.next-button:hover {
-background-color: darkorange;
-}
-
-
-.reset-button {
-    background-color: #ff0019; /* Vermelho escuro */
-    text-decoration: underline;
-}
-.reset-button:hover:enabled {
-    background-color: #a71f2d; /* Vermelho escuro */
-    text-decoration: underline;
-}
-
-.reset-button:disabled {
-    text-decoration: none;
-    cursor: default;
-}
-
-
-.info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-column {
-    flex: 1;
-}
-
-.info p {
-    margin: 5px 0;
-}
-
-.input-column {
-    flex: 1;
-}
-
-.input-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.input-column {
-    flex: 1;
+main {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.input-column label {
-    margin-bottom: 5px;
-}
-.input-field {
-    background-color: #111; /* Fundo mais escuro */
-    color: white; /* Texto branco */
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-right: 50%;
+.product {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 170px); /* Ajustando a altura dos produtos */
+    padding: 10px; /* Reduzindo o padding */
+    margin-top: 10px; /* Reduzindo a margem superior */
+    margin-bottom: 10px; /* Reduzindo a margem inferior */
 }
 
-/* Estilo para campos de entrada desativados */
-.input-field[disabled] {
-    background-color: #333; /* Fundo mais claro quando desativado */
-    color: #888; /* Texto cinza */
+.product-info {
+    width: 40%;
 }
 
-/* Estilo para o controle de checkbox */
-.toggle-checkbox {
-    display: none; /* Ocultar o controle de checkbox */
-    
+.product-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Reduzindo a margem inferior */
 }
 
-/* Estilo para a label do togglebutton */
-.toggle-label {
-    display: inline-block;
-    width: 30px; /* Largura do togglebutton */
-    height: 15px; /* Altura do togglebutton */
-    background-color: #111; /* Cor de fundo padrão */
-    border-radius: 15px; /* Metade da altura para criar um círculo */
-    cursor: pointer; /* Mostrar cursor ao passar por cima */
-    margin-left: 10px;
-    align-self: center;
-    position: relative; /* Posição relativa para permitir posicionamento do pseudo-elemento */
-    border: 1px solid rgb(255, 255, 255)
-    
+.product-info p {
+    margin-bottom: 10px; /* Reduzindo a margem inferior */
 }
-.toggle-label:disabled {
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons img {
+    width: 25px;
+    height: 25px;
+    padding-right: 10px;
+}
+
+.buttons a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #333;
-    
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.separator {
+.buttons a:hover {
+    background-color: #555;
+}
+
+.product-image {
+    width: 50%;
+}
+
+.product-image img {
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
-
-/* Estilo para o pseudo-elemento que representa o botão do toggle */
-.toggle-label::after {
-    content: '';
-    display: block;
-    width: 15px; /* Largura do botão do toggle */
-    height: 15px; /* Altura do botão do toggle */
-    background-color: white; /* Cor do botão do toggle */
-    border-radius: 50%; /* Deixar o botão do toggle circular */
-    position: absolute; /* Posicionar absolutamente dentro do togglebutton */
-    top: 0;
-    left: 0;
-    transition: transform 0.2s; /* Adicionar uma transição suave para o movimento */
-    
-}
-
-/* Estilo para o botão do toggle quando o checkbox está marcado */
-.toggle-checkbox:checked + .toggle-label::after {
-    transform: translateX(15px); /* Mover o botão para a direita */
-}
-
-.toggle-checkbox:checked + .toggle-label {
-    background-color: #3d8d40; /* Cor de fundo verde */
-}
-
-.toggle-checkbox:checked:disabled + .toggle-label {
-    background-color: #255827; /* Cor de fundo verde */
-}
-
-.toggle-checkbox:disabled + .toggle-label {
-    background-color: #333; /* Cor de fundo verde */
-}
-
-.toggle-checkbox:checked:disabled + .toggle-label::after {
-    background-color: #707070; /* Cor de fundo verde */
-}
-
-.toggle-checkbox:disabled + .toggle-label::after {
-    background-color: #707070; /* Cor de fundo verde */
-}
-
-/* Ajustes para o conteúdo da página em dispositivos móveis */
-@media only screen and (max-width: 600px) {
-    .navbar {
-        padding: 10px;
-    }
-
-    .app-name {
-        font-size: 20px;
-    }
-
-    .controls {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .button {
-        margin: 5px;
-        padding: 5px 10px;
-        font-size: 14px;
-    }
-
-    .info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info-column {
-        width: 100%;
-        text-align: center;
-    }
-
-    .input-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .input-column {
-        width: 100%;
-        margin-right: 0;
-    }
-
-    .input-field {
-        width: 80%;
-        margin: 5px 0;
-    }
-}
-
-
